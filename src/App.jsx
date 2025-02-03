@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import NavBar from './components/NavBar/NavBar'
+import Fruits from './components/Fruits/Fruits'
+import Footer from './components/Footer/Footer'
 
 function App() {
-const fruits = [
-  { id: 1, name: "Apple", color: "Red", inStock: true, emoji: "🍎" },
+  const fruits = [
+    { id: 1, name: "Apple", color: "Red", inStock: true, emoji: "🍎" },
     { id: 2, name: "Banana", color: "Yellow", inStock: false, emoji: "🍌" },
     { id: 3, name: "Grapes", color: "Purple", inStock: true, emoji: "🍇" },
     { id: 4, name: "Kiwi", color: "Brown", inStock: false, emoji: "🥝" },
@@ -15,22 +18,13 @@ const fruits = [
     { id: 10, name: "Pear", color: "Green", inStock: false, emoji: "🍐" },
     { id: 11, name: "Cherry", color: "Red", inStock: true, emoji: "🍒" },
     { id: 12, name: "Blueberry", color: "Blue", inStock: false, emoji: "🫐" }
-]
+  ]
 
   return (
     <>
-    <div className="navbar-logo">Fruitopia 🍓🍉🍒🍎🍑</div>
-    <ul>
-      {
-        fruits.map((fruit) => (
-          <li key={fruit.id}>{fruit.name}</li>
-        ))
-      }
-    </ul>
-
-    <footer>
-      <p>Made with ❤️ for teaching React</p>
-    </footer>
+      <NavBar />
+      <Fruits fruits={fruits} />
+      <Footer />
     </>
   )
 }
